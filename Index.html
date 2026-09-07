@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Official November 31st Celebration</title>
+    <style>
+        body {
+            background-color: #0d0d1a;
+            color: #00ffcc;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            padding: 50px 20px;
+            overflow-x: hidden;
+        }
+        h1 {
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px #ff0077, 0 0 20px #ff0077;
+            animation: glitch 1s linear infinite;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid #ff0077;
+            box-shadow: 0 0 20px rgba(255, 0, 119, 0.3);
+        }
+        .countdown {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #fff;
+            background: #000;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 1px dashed #00ffcc;
+        }
+        button {
+            background: #ff0077;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: 0.2s;
+        }
+        button:hover {
+            background: #00ffcc;
+            color: #000;
+            box-shadow: 0 0 15px #00ffcc;
+        }
+        input {
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 1px solid #00ffcc;
+            background: #1a1a3a;
+            color: white;
+            margin-bottom: 15px;
+            width: 80%;
+        }
+        @keyframes glitch {
+            0% { text-shadow: 2px 2px #ff0077, -2px -2px #00ffcc; }
+            50% { text-shadow: -2px 2px #ff0077, 2px -2px #00ffcc; }
+            100% { text-shadow: 2px -2px #ff0077, -2px 2px #00ffcc; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>⚠️ GLITCH IN THE MATRIX ⚠️</h1>
+    <div class="container">
+        <p>Your friend cracked the code of linear time. Welcome to the infinite horizon of:</p>
+        <h2 style="color: #fff; font-size: 2.5rem;">NOVEMBER 31ST</h2>
+        
+        <div class="countdown" id="timer">Loading Time Vortex...</div>
+
+        <h3>RSVP for the Mythical Birthday Bash</h3>
+        <input type="text" id="guestName" placeholder="Enter your name to claim your invite">
+        <br>
+        <button onclick="triggerGlitch()">Claim RSVP</button>
+        <p id="msg" style="margin-top: 15px; font-weight: bold; min-height: 24px;"></p>
+    </div>
+
+    <script>
+        // Chaotic Infinite Countdown Script
+        setInterval(() => {
+            const days = Math.floor(Math.random() * 999);
+            const hours = String(Math.floor(Math.random() * 24)).padStart(2, '0');
+            const mins = String(Math.floor(Math.random() * 60)).padStart(2, '0');
+            const secs = String(Math.floor(Math.random() * 60)).padStart(2, '0');
+            document.getElementById('timer').innerText = `${days}d : ${hours}h : ${mins}m : ${secs}s until Reality Fails`;
+        }, 100);
+
+        function triggerGlitch() {
+            const name = document.getElementById('guestName').value;
+            const msg = document.getElementById('msg');
+            if(!name) {
+                msg.style.color = '#ff0077';
+                msg.innerText = "Error: Input a valid consciousness name.";
+                return;
+            }
+            msg.style.color = '#00ffcc';
+            msg.innerText = `🚨 ERROR 404: Calendar out of bounds. ${name}'s invitation is permanently trapped in December 0th!`;
+        }
+    </script>
+</body>
+</html>
